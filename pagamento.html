@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Checkout demonstrativo de matrícula da academia NEXT FIGHT.">
+<title>Matrícula | NEXT FIGHT</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+<a class="brand" href="index.html"><img src="logo-next-fight.png" alt="Logo NEXT FIGHT"></a>
+<nav>
+<a href="index.html">Início</a>
+<a href="modalidades.html">Modalidades</a>
+<a href="planos.html">Planos</a>
+<a href="horarios.html">Horários</a>
+<a href="contato.html">Contato</a>
+<a class="active" href="pagamento.html">Matrícula</a>
+<a href="ia.html">IA</a>
+</nav>
+<button id="modoBtn" class="theme-btn">Modo Escuro</button>
+</header>
+
+<main>
+<section class="page-head payment-head">
+<p class="eyebrow">MATRÍCULA NEXT FIGHT</p>
+<h1>Seu próximo nível começa agora</h1>
+<p>Escolha seu plano e conclua sua matrícula em poucos passos.</p>
+</section>
+
+<section class="payment-section">
+<div class="payment-layout">
+<div class="payment-main">
+<div class="checkout-steps" aria-label="Etapas da matrícula">
+<div class="checkout-step active"><span>1</span><strong>Dados</strong></div>
+<div class="step-line"></div>
+<div class="checkout-step active"><span>2</span><strong>Pagamento</strong></div>
+<div class="step-line"></div>
+<div class="checkout-step"><span>3</span><strong>Confirmação</strong></div>
+</div>
+
+<form id="pagamentoForm" class="payment-form" novalidate>
+<section class="checkout-block">
+<div class="block-heading"><span class="block-number">01</span><div><p class="eyebrow">ESCOLHA SEU CAMINHO</p><h2>Plano de matrícula</h2></div></div>
+<div class="plan-options" role="radiogroup" aria-label="Planos de matrícula">
+<label class="plan-option">
+<input type="radio" name="planoPagamento" value="basico" data-name="Plano Básico" data-price="99.90" data-description="2 treinos por semana">
+<span class="plan-option-content"><strong>Plano Básico</strong><small>2 treinos por semana</small><b>R$ 99,90<span>/mês</span></b></span>
+</label>
+<label class="plan-option featured-plan">
+<input type="radio" name="planoPagamento" value="fighter" data-name="Plano Fighter" data-price="149.90" data-description="3 treinos por semana" checked>
+<span class="plan-option-content"><strong>Plano Fighter</strong><small>3 treinos por semana</small><b>R$ 149,90<span>/mês</span></b></span>
+<span class="plan-badge">MAIS ESCOLHIDO</span>
+</label>
+<label class="plan-option">
+<input type="radio" name="planoPagamento" value="profissional" data-name="Plano Profissional" data-price="199.90" data-description="Treinos ilimitados">
+<span class="plan-option-content"><strong>Plano Profissional</strong><small>Treinos ilimitados</small><b>R$ 199,90<span>/mês</span></b></span>
+</label>
+</div>
+</section>
+
+<section class="checkout-block">
+<div class="block-heading"><span class="block-number">02</span><div><p class="eyebrow">VAMOS TE CONHECER</p><h2>Dados do aluno</h2></div></div>
+<div class="form-row payment-form-row">
+<div class="field-group"><label for="alunoNome">Nome completo <span>*</span></label><input id="alunoNome" name="alunoNome" type="text" autocomplete="name" placeholder="Como podemos te chamar?" required><small class="field-error" data-error-for="alunoNome"></small></div>
+<div class="field-group"><label for="alunoEmail">E-mail <span>*</span></label><input id="alunoEmail" name="alunoEmail" type="email" autocomplete="email" placeholder="voce@email.com" required><small class="field-error" data-error-for="alunoEmail"></small></div>
+</div>
+<div class="form-row payment-form-row">
+<div class="field-group"><label for="alunoCpf">CPF <span>*</span></label><input id="alunoCpf" name="alunoCpf" type="text" inputmode="numeric" autocomplete="off" placeholder="000.000.000-00" maxlength="14" required><small class="field-error" data-error-for="alunoCpf"></small></div>
+<div class="field-group"><label for="alunoTelefone">Celular <span>*</span></label><input id="alunoTelefone" name="alunoTelefone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(00) 00000-0000" maxlength="15" required><small class="field-error" data-error-for="alunoTelefone"></small></div>
+</div>
+</section>
+
+<section class="checkout-block">
+<div class="block-heading"><span class="block-number">03</span><div><p class="eyebrow">FINALIZAÇÃO</p><h2>Forma de pagamento</h2></div></div>
+<div class="payment-methods" role="tablist" aria-label="Método de pagamento">
+<button class="method-tab active" type="button" data-method="card" role="tab" aria-selected="true"><span class="method-icon">▣</span><span><strong>Cartão</strong><small>Crédito ou débito</small></span></button>
+<button class="method-tab" type="button" data-method="pix" role="tab" aria-selected="false"><span class="method-icon pix-symbol">◆</span><span><strong>Pix</strong><small>Pagamento instantâneo</small></span></button>
+</div>
+<input id="metodoPagamento" type="hidden" value="card">
+<div id="cardFields" class="method-fields">
+<div class="field-group"><label for="numeroCartao">Número do cartão <span>*</span></label><input id="numeroCartao" name="numeroCartao" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="0000 0000 0000 0000" maxlength="19"><small class="field-error" data-error-for="numeroCartao"></small></div>
+<div class="field-group"><label for="nomeCartao">Nome no cartão <span>*</span></label><input id="nomeCartao" name="nomeCartao" type="text" autocomplete="cc-name" placeholder="Nome como está no cartão"><small class="field-error" data-error-for="nomeCartao"></small></div>
+<div class="form-row payment-form-row compact-row">
+<div class="field-group"><label for="validadeCartao">Validade <span>*</span></label><input id="validadeCartao" name="validadeCartao" type="text" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/AA" maxlength="5"><small class="field-error" data-error-for="validadeCartao"></small></div>
+<div class="field-group"><label for="cvvCartao">CVV <span>*</span></label><input id="cvvCartao" name="cvvCartao" type="text" inputmode="numeric" autocomplete="cc-csc" placeholder="123" maxlength="4"><small class="field-error" data-error-for="cvvCartao"></small></div>
+</div>
+</div>
+<div id="pixFields" class="method-fields pix-panel hidden" aria-hidden="true">
+<div class="pix-mark">◆</div>
+<div><strong>Você verá o QR Code após confirmar</strong><p>Como esta é uma demonstração, nenhum código Pix real será gerado e nenhuma cobrança será feita.</p></div>
+</div>
+<div class="secure-note"><span>⌁</span><span>Seus dados ficam apenas nesta demonstração local. Não enviamos informações para gateways de pagamento.</span></div>
+</section>
+
+<div class="terms-field"><label class="check-label"><input id="termos" type="checkbox"><span>Li e concordo com os termos da matrícula demonstrativa.</span></label><small class="field-error" data-error-for="termos"></small></div>
+<button class="btn payment-submit" type="submit">CONFIRMAR MATRÍCULA <span>→</span></button>
+<p class="demo-disclaimer">Ambiente demonstrativo: nenhuma cobrança real será processada.</p>
+</form>
+
+<section id="successState" class="success-state hidden" aria-live="polite">
+<div class="success-icon">✓</div>
+<p class="eyebrow">MATRÍCULA PRÉ-CONFIRMADA</p>
+<h2>Você está pronto para o próximo round.</h2>
+<p>Recebemos seus dados e reservamos seu plano <strong id="successPlan">Plano Fighter</strong>.</p>
+<div class="demo-callout"><strong>Isso é uma demonstração</strong><span>Nenhum pagamento foi processado e nenhum dado foi enviado para um gateway.</span></div>
+<a class="btn" href="index.html">VOLTAR PARA O INÍCIO</a>
+<button id="novaMatricula" class="btn outline dark-outline" type="button">Fazer outra matrícula</button>
+</section>
+</div>
+
+<aside class="order-summary" aria-label="Resumo da matrícula">
+<div class="summary-top"><span class="summary-kicker">RESUMO DA MATRÍCULA</span><span class="summary-lock">⌁</span></div>
+<div class="summary-plan-mark">NF</div>
+<p class="summary-label">Plano selecionado</p>
+<h2 id="summaryPlan">Plano Fighter</h2>
+<p id="summaryDescription" class="summary-description">3 treinos por semana</p>
+<div class="summary-divider"></div>
+<div class="summary-line"><span>Mensalidade</span><strong id="summaryPrice">R$ 149,90</strong></div>
+<div class="summary-line"><span>Taxa de matrícula</span><strong class="included">GRÁTIS</strong></div>
+<div class="summary-divider"></div>
+<div class="summary-total"><span>Total hoje</span><strong id="summaryTotal">R$ 149,90</strong></div>
+<div class="summary-payment"><span class="summary-payment-icon">▣</span><div><small>Pagamento via</small><strong id="summaryMethod">Cartão</strong></div></div>
+<ul class="summary-benefits"><li>✓ Acesso à estrutura NEXT FIGHT</li><li>✓ Orientação de treinadores</li><li>✓ Comunidade de evolução</li></ul>
+</aside>
+</div>
+</section>
+</main>
+
+<footer><img src="logo-next-fight.png" alt="NEXT FIGHT"><p>Força • Disciplina • Respeito</p><p class="small">© 2026 NEXT FIGHT</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
